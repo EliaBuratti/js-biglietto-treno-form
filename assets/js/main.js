@@ -26,6 +26,46 @@ Prova a racchiudere gli input ed il bottone in un tag form e prova a far funzion
 Questo richiederá un minimo di ricerca per capire come usare il parametro e dentro la funzione anonima dell'event listener. function(e){ console.log(e) } */
 
 
-const km = document.getElementById('km').value;
+const calculate = document.querySelector('button');
 
-const age = document.getElementById('age').value;
+//prompt km + prompt età con number
+
+calculate.addEventListener('click', function() {
+
+    //ottengo i dati inseriti dall'input
+
+    const userKm = Number(document.getElementById('km').value);
+
+    const userAge = Number(document.getElementById('age').value);
+
+    console.log(`kilometri ${userKm}, anni ${userAge}`);
+
+    
+    //valido i dati inseriti affinchè siano numeri e nel caso faccio apparire un avviso poi ricarico la pagina.
+
+    if ((isNaN(userKm)) || (userKm == "") || (userKm == "undefined")) {
+
+        alert('Inserisci solo numeri!');
+        window.location.reload();
+    
+    } else if ((isNaN(userAge)) || (userAge == "") || (userAge == "undefined")) {
+    
+        alert('inserisci solo i numeri anche qua!');
+        window.location.reload();
+    }
+
+    //calcolo lo sconto
+
+    let priceKm = userKm * 0.21;
+
+    if (userAge < 18) { //sconto minorenni
+        
+       priceKm = (priceKm - (priceKm * 0.2)).toFixed(2);
+
+    } else if (userAge > 65) { //sconto over 65
+        priceKm = (priceKm - (priceKm * 0.4)).toFixed(2);
+    }
+
+    console.log(priceKm);
+
+});
