@@ -3,12 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Train Ticket</title>
 </head>
 <body>
-    <input type="text" value="" id="km" placeholder="Quanti km vuoi fare?">
-    <input type="text" value="" id="age" placeholder="Quanti anni hai?">
-    <button>Calcola</button>
+
+    <h1>Calcola la tua spesa sulla nostra tratta ferroviaria</h1>
+
+    <div class="input_form">
+        <input type="text" value="" id="name" placeholder="Come ti chiami?">
+        <input type="text" value="" id="km" placeholder="Quanti km vuoi fare?">
+        <input type="text" value="" id="age" placeholder="Quanti anni hai?">
+        <button>Calcola</button>
+    </div>
+
+    <section class="quotation eb_hidden" >
+
+        <!-- manca da aggiungere il nome, il prezzo, il piano e da generare la data di richesta del preventivo con js -->
+        
+        <h2>Ecco il tuo preventivo</h2>
+    
+        <div class="ticket">
+            <div class="d-flex">
+                <div class="passenger">
+                    <span class="title">Nome Passeggero</span>
+                    <p id="name">aaaafdsf</p>
+                </div>
+                <div class="costs">
+                    <span class="title">Costo biglietto</span>
+                    <p id="price"></p>
+                </div>
+                <div class="plane_ticket">
+                    <span class="title">Il nostro piano dedicato per te</span> 
+                    <p id="plane"></p>
+                </div>
+                <div class="date">
+                    <span class="title">Data del preventivo</span> 
+                    <p id="quote"></p>                
+                </div>
+            </div>
+        </div>
+    </section>
     
     <script type="text/javascript" src="./assets/js/main.js"></script>
 </body>

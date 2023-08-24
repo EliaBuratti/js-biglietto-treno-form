@@ -33,12 +33,14 @@ const calculate = document.querySelector('button');
 calculate.addEventListener('click', function() {
 
     //ottengo i dati inseriti dall'input
+    const userName = document.getElementById('name').value;
 
     const userKm = Number(document.getElementById('km').value);
 
     const userAge = Number(document.getElementById('age').value);
 
-    console.log(`kilometri ${userKm}, anni ${userAge}`);
+
+    console.log(`Nome ${userName}, kilometri ${userKm}, anni ${userAge}`);
 
     
     //valido i dati inseriti affinchè siano numeri e nel caso faccio apparire un avviso poi ricarico la pagina.
@@ -51,6 +53,11 @@ calculate.addEventListener('click', function() {
     } else if ((isNaN(userAge)) || (userAge == "") || (userAge == "undefined")) {
     
         alert('inserisci solo i numeri anche qua!');
+        window.location.reload();
+
+    } else if ((userName == "") || (userName == "undefined")) {
+    
+        alert('Completa bene tutti i campi');
         window.location.reload();
     }
 

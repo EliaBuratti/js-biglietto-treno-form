@@ -1,0 +1,60 @@
+/* css reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0C356A;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1, h2 {
+    color: #279EFF;
+}
+
+.input_form, body, .ticket {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.input_form > input, .input_form > button {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    border: white;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-around;
+    background-color: #D5FFD0;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.ticket {
+    padding: 0 3rem;
+}
+
+.title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: rgb(113, 113, 113);
+    border-bottom: 1px solid rgb(113, 113, 113);
+    padding: 0.5rem;
+}
+
+.ticket p {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+}
+
+/* .eb_hidden {
+    display: none; ------------------------------------------------------- da riabilitare
+} */
