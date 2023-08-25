@@ -11,12 +11,14 @@
 
     <h1>Calcola la tua spesa sulla nostra tratta ferroviaria</h1>
 
-    <div class="input_form">
+    <form class="input_form">
         <input type="text" value="" id="name" placeholder="Come ti chiami?">
-        <input type="text" value="" id="km" placeholder="Quanti km vuoi fare?">
-        <input type="text" value="" id="age" placeholder="Quanti anni hai?">
-        <button>Calcola</button>
-    </div>
+        <input type="number" value="" id="km" placeholder="Quanti km vuoi fare?">
+        <input type="number" value="" id="age" placeholder="Quanti anni hai?">
+        <button type="submit" >Calcola</button>
+        <button type="reset">Cancella</button>
+
+    </form>
 
     <section class="quotation eb_hidden" >
 
@@ -28,7 +30,7 @@
             <div class="d-flex">
                 <div class="passenger">
                     <span class="title">Nome Passeggero</span>
-                    <p id="name">aaaafdsf</p>
+                    <p id="nameUser"></p>
                 </div>
                 <div class="costs">
                     <span class="title">Costo biglietto</span>
@@ -40,7 +42,7 @@
                 </div>
                 <div class="date">
                     <span class="title">Data del preventivo</span> 
-                    <p id="quote"></p>                
+                    <p id="time"></p>                
                 </div>
             </div>
         </div>

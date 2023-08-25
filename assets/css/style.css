@@ -55,6 +55,6 @@ h1, h2 {
     padding: 0.5rem;
 }
 
-/* .eb_hidden {
-    display: none; ------------------------------------------------------- da riabilitare
-} */
+.eb_hidden {
+    display: none;
+}

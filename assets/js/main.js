@@ -26,11 +26,17 @@ Prova a racchiudere gli input ed il bottone in un tag form e prova a far funzion
 Questo richiederá un minimo di ricerca per capire come usare il parametro e dentro la funzione anonima dell'event listener. function(e){ console.log(e) } */
 
 
-const calculate = document.querySelector('button');
-
+const calculate = document.querySelector('.input_form');
+const ticketQuotation = document.querySelector('section');
 //prompt km + prompt età con number
 
-calculate.addEventListener('click', function() {
+calculate.addEventListener('submit', function(e) {
+
+    //impedisco il refresh della pagina dopo aver cliccato su ''calcola
+    e.preventDefault();
+
+    //faccio apparire il preventivo
+    ticketQuotation.classList.remove('eb_hidden');
 
     //ottengo i dati inseriti dall'input
     const userName = document.getElementById('name').value;
@@ -47,12 +53,12 @@ calculate.addEventListener('click', function() {
 
     if ((isNaN(userKm)) || (userKm == "") || (userKm == "undefined")) {
 
-        alert('Inserisci solo numeri!');
+        alert('Completa bene tutti i campi');
         window.location.reload();
     
     } else if ((isNaN(userAge)) || (userAge == "") || (userAge == "undefined")) {
     
-        alert('inserisci solo i numeri anche qua!');
+        alert('Completa bene tutti i campi');
         window.location.reload();
 
     } else if ((userName == "") || (userName == "undefined")) {
@@ -64,15 +70,30 @@ calculate.addEventListener('click', function() {
     //calcolo lo sconto
 
     let priceKm = userKm * 0.21;
+    let discount = 'Piano Standard'
 
     if (userAge < 18) { //sconto minorenni
         
        priceKm = (priceKm - (priceKm * 0.2)).toFixed(2);
+       discount = 'Piano giovani'
 
     } else if (userAge > 65) { //sconto over 65
         priceKm = (priceKm - (priceKm * 0.4)).toFixed(2);
+        discount = 'Piano over'
     }
 
     console.log(priceKm);
 
+    //stampo i risultati
+    document.getElementById('nameUser').innerHTML = userName;
+    document.getElementById('price').innerHTML = `${priceKm} €`;
+    document.getElementById('plane').innerHTML = discount;
+    document.getElementById('time').innerHTML = new Date ().toDateString();
+
+    
+});
+
+calculate.addEventListener('reset', function() {
+    
+    ticketQuotation.classList.add('eb_hidden');
 });
